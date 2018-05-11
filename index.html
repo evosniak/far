@@ -110,8 +110,68 @@
 		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxtreegrid.js"></script>
 		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxwindow.js"></script>
 		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxlistbox.js"></script>
+		
 	</head>
 	<body>
+		<div id="content">
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$("#jqxInjuredName").jqxTextArea({ placeHolder: "Injured Person", height: '23px', width: '175px', minLength: 1 });
+					var genderSource = [
+						"Male",
+						"Female",
+						"Other",
+					];
+					var plantSource = [
+						"1",
+						"2",
+						"3",
+						"4",
+						"5",
+					];
+					var yesNoSource = [
+						"Yes",
+						"No",
+					];
+					var plantDeparts = [
+						"Example1",
+						"Example2",
+						"Example3",
+						"Example4",
+						"Example5",
+					];
+					var weekDays = [
+						"Sunday",
+						"Monday",
+						"Tuesday",
+						"Wednesday",
+						"Thursday",
+						"Friday",
+						"Saturday",
+					];
+					$("#jqxGenderSelect").jqxDropDownList({ source: genderSource, width: '175px', height: '23px', placeHolder: 'Select the Gender' });
+					$("#jqxPlantSelect").jqxComboBox({ source: plantSource, placeHolder: 'Select the Plant', width: '175px', height: '23px' });
+					$("#jqxDepartSelect").jqxComboBox({source: plantDeparts, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxYesNoSelect").jqxDropDownList({ source: yesNoSource, width: '175px', height:' 23px' });
+					$("#jqxYesNoSelect2").jqxDropDownList({ source: yesNoSource, width: '175px', height:' 23px' });
+					$("#jqxDaySelect").jqxDropDownList({ source: weekDays, width: '175px', height: '23px', checkboxes: true });
+				});
+			</script>
+			<h1 style="color:white;">HRP-28 First Aid Report</h1>
+			<p style="color:white; font-size: 18px;">This form must be filled out by a First Aid Team Member</p>
+			<textarea id="jqxInjuredName"></textarea>
+			
+			<div id="jqxGenderSelect" style="float: left;"></div>
+			<div id="jqxPlantSelect" style="float: left;"></div>
+			<div id="jqxDepartSelect" style="float: left;"></div>
+			<br />
+			<p style="color:white;">Is this the injured person's normal shift?</p>
+			<div id="jqxYesNoSelect"></div>
+			<p style="color:white;">Is this the injured person's normal department?</p>
+			<div id="jqxYesNoSelect2"></div>
+			<p style="color:white;">Please select the injured person's scheduled workdays</p>
+			<div id="jqxDaySelect"></div>
+		</div>
 		
 	</body>
 </html>
