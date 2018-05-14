@@ -11,6 +11,7 @@
 			body{
 				background-color: black;
 				margin: 0px;
+				padding-left: 20px;
 			}
 			table{
 				border-collapse: collapse;
@@ -239,6 +240,10 @@
 					$("#jqxYesNoSelect2").jqxDropDownList({ source: yesNoSource, width: '175px', height:' 23px' });
 					$("#jqxDaySelect").jqxDropDownList({ source: weekDays, width: '175px', height: '23px', checkboxes: true });
 					$("#jqxStateSelect").jqxComboBox({ source: stateList, placeHolder: "State", width: '175px' });
+					$("#jqxPhoneNumber").jqxMaskedInput({ width: '175px', height: '23px', mask: '(###) ###-####' });
+					$("#jqxHireDate").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
+					$("#jqxYesNoSelect3").jqxDropDownList({ source: yesNoSource, width: '175px', height: '23px' });
+					$("#jqxOutsideComp").jqxTextArea({ width:'175px', height: '23px', placeHolder: 'Outside Company' })
 					$("#jqxDepartSelect1").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
 					$("#jqxDepartSelect2").jqxComboBox({source: plantDeparts2, width: '175px', height: '23px', placeHolder: "Select the Department" });
 					$("#jqxDepartSelect3").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
@@ -265,10 +270,22 @@
 								$("#jqxDepartSelect2").show();
 							} else if (value === "3") {
 								$("#jqxDepartSelect3").show();
-								} else if (value === "4") {
+							} else if (value === "4") {
 								$("#jqxDepartSelect2").show();
 							} else {
 								$("#jqxDepartSelect5").show();
+							}
+						}
+					});
+					$("#jqxOutsideComp").hide();
+					$("#jqxYesNoSelect3").on('change', function (event) {
+						var args = event.args;
+						$("#jqxOutsideComp").hide();
+						if(args) {
+							var item = args.item;
+							var value = item.value;
+							if (value === "No") {
+								$("#jqxOutsideComp").show();
 							}
 						}
 					});
@@ -286,12 +303,12 @@
 				<div class="column">
 					<textarea id="jqxInjuredName"></textarea>
 					<div id="jqxGenderSelect" style="float: left;"></div>
-					<div id="jqxPlantSelect" style="float: left;"></div>
-					<div id="jqxDepartSelect1" style="float: left;"></div>
-					<div id="jqxDepartSelect2" style="float: left;"></div>
-					<div id="jqxDepartSelect3" style="float: left;"></div>
-					<div id="jqxDepartSelect4" style="float: left;"></div>
-					<div id="jqxDepartSelect5" style="float: left;"></div>
+					<div id="jqxPlantSelect" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect1" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect2" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect3" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect4" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect5" style="float: left; margin-left: 10px;"></div>
 					<br />
 					<p style="color:white;">Is this the injured person's normal shift?</p>
 					<div id="jqxYesNoSelect"></div>
@@ -299,7 +316,6 @@
 					<div id="jqxYesNoSelect2"></div>
 					<p style="color:white;">Please select the injured person's scheduled workdays</p>
 					<div id="jqxDaySelect"></div>
-					<br />
 					<br />
 					<p style="color:white;">Enter the employee's street address</p>
 					<textarea id="jqxStrtAddress"></textarea>
@@ -309,6 +325,13 @@
 					<div id="jqxStateSelect"></div>
 					<p style="color:white;">Enter the zip code</p>
 					<div id="jqxZipcode"></div>
+					<p style="color:white;">Enter the employee's phone number</p>
+					<div id="jqxPhoneNumber"></div>
+					<p style="color:white;">Enter the employee's start date</p> <!-- Can this be pulled from LDAP? -->
+					<div id="jqxHireDate"></div>								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+					<p style="color:white;">Is this person a Technifab employee?</p>
+					<div id="jqxYesNoSelect3" style="float: left;"></div>
+					<textarea id="jqxOutsideComp" style="float: left; margin-left: 5px;"></textarea>
 				</div>
 				<!-- Column 2 -->
 				<div class="column">
