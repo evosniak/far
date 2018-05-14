@@ -50,6 +50,15 @@
 				font-weight: bold;
 				color: yellow;
 			}
+			.column {
+				float: left;
+				width: 50%;
+			}
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
 		</style>
 		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\scripts\jquery-1.12.4.min.js"></script>
 		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxcore.js"></script>
@@ -263,37 +272,56 @@
 							}
 						}
 					});
+					$("#jqxDateOccurred").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
+					$("#jqxTimeOccurred").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "h:mm tt", showCalendarButton: false, showTimeButton: true });
+					$("#jqxDateReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
+					$("#jqxTimeReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "h:mm tt", showCalendarButton: false, showTimeButton: true });
 				});
 				
 			</script>
 			<h1 style="color:white;">HRP-28 First Aid Report</h1>
 			<p style="color:white; font-size: 18px;">This form must be filled out by a First Aid Team Member</p>
-			<textarea id="jqxInjuredName"></textarea>
-			
-			<div id="jqxGenderSelect" style="float: left;"></div>
-			<div id="jqxPlantSelect" style="float: left;"></div>
-			<div id="jqxDepartSelect1" style="float: left;"></div>
-			<div id="jqxDepartSelect2" style="float: left;"></div>
-			<div id="jqxDepartSelect3" style="float: left;"></div>
-			<div id="jqxDepartSelect4" style="float: left;"></div>
-			<div id="jqxDepartSelect5" style="float: left;"></div>
-			<br />
-			<p style="color:white;">Is this the injured person's normal shift?</p>
-			<div id="jqxYesNoSelect"></div>
-			<p style="color:white;">Is this the injured person's normal department?</p>
-			<div id="jqxYesNoSelect2"></div>
-			<p style="color:white;">Please select the injured person's scheduled workdays</p>
-			<div id="jqxDaySelect"></div>
-			<br />
-			<br />
-			<p style="color:white;">Enter the employee's street address</p>
-			<textarea id="jqxStrtAddress"></textarea>
-			<p style="color:white;">Enter the city</p>
-			<textarea id="jqxCity"></textarea>
-			<p style="color:white;">Enter the state</p>
-			<div id="jqxStateSelect"></div>
-			<p style="color:white;">Enter the zip code</p>
-			<div id="jqxZipcode"></div>
+			<div class ="row">
+				<!-- Column 1 -->
+				<div class="column">
+					<textarea id="jqxInjuredName"></textarea>
+					<div id="jqxGenderSelect" style="float: left;"></div>
+					<div id="jqxPlantSelect" style="float: left;"></div>
+					<div id="jqxDepartSelect1" style="float: left;"></div>
+					<div id="jqxDepartSelect2" style="float: left;"></div>
+					<div id="jqxDepartSelect3" style="float: left;"></div>
+					<div id="jqxDepartSelect4" style="float: left;"></div>
+					<div id="jqxDepartSelect5" style="float: left;"></div>
+					<br />
+					<p style="color:white;">Is this the injured person's normal shift?</p>
+					<div id="jqxYesNoSelect"></div>
+					<p style="color:white;">Is this the injured person's normal department?</p>
+					<div id="jqxYesNoSelect2"></div>
+					<p style="color:white;">Please select the injured person's scheduled workdays</p>
+					<div id="jqxDaySelect"></div>
+					<br />
+					<br />
+					<p style="color:white;">Enter the employee's street address</p>
+					<textarea id="jqxStrtAddress"></textarea>
+					<p style="color:white;">Enter the city</p>
+					<textarea id="jqxCity"></textarea>
+					<p style="color:white;">Enter the state</p>
+					<div id="jqxStateSelect"></div>
+					<p style="color:white;">Enter the zip code</p>
+					<div id="jqxZipcode"></div>
+				</div>
+				<!-- Column 2 -->
+				<div class="column">
+					<p style="color:white;">What date did the incident occur?</p>
+					<div id="jqxDateOccurred"></div>
+					<p style="color:white;">What time did the incident occur?</p>
+					<div id="jqxTimeOccurred"></div>
+					<p style="color:white;">What date did the incident get reported?</p>
+					<div id="jqxDateReported"></div>
+					<p style="color:white;">What time did the incident get reported?</p>
+					<div id="jqxTimeReported"></div>
+				</div>
+			</div>
 		</div>
 		
 	</body>
