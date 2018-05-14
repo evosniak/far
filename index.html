@@ -53,7 +53,7 @@
 			}
 			.column {
 				float: left;
-				width: 50%;
+				width: 33%;
 			}
 			.row:after {
 				content: "";
@@ -126,7 +126,7 @@
 			<script type="text/javascript">
 				$(document).ready(function () {
 					$("#jqxInjuredName").jqxTextArea({ placeHolder: "Injured Person", height: '23px', width: '175px', minLength: 1 });
-					$("#jqxStrtAddress").jqxTextArea({ placeHolder: "Street Address", height: '23px', width: '175px', minLength: 1 });
+					$("#jqxStrtAddress").jqxTextArea({ placeHolder: "Street Address", height: '23px', width: '200px', minLength: 1 });
 					$("#jqxCity").jqxTextArea({ placeHolder: "City", height: '23px', width: '175px',});
 					$("#jqxZipcode").jqxMaskedInput({ width: '175px', height: '23px', mask: '#####'}); 
 					var genderSource = [
@@ -234,15 +234,23 @@
 						"Oberlin",
 						"Sheffield Lake"
 					)
-					$("#jqxGenderSelect").jqxDropDownList({ source: genderSource, width: '175px', height: '23px', placeHolder: 'Select the Gender' });
+					var subSeqActions = [
+						"Referred to Physician",
+						"Sent to Hospital",
+						"Sent Home",
+						"Returned to Work",
+						"Refused Treatment",
+						"Other",
+					];
+					$("#jqxGenderSelect").jqxComboBox({ source: genderSource, width: '175px', height: '23px', placeHolder: 'Select the Gender' });
 					$("#jqxPlantSelect").jqxComboBox({ source: plantSource, placeHolder: 'Select the Plant', width: '175px', height: '23px' });
-					$("#jqxYesNoSelect").jqxDropDownList({ source: yesNoSource, width: '175px', height:' 23px' });
-					$("#jqxYesNoSelect2").jqxDropDownList({ source: yesNoSource, width: '175px', height:' 23px' });
-					$("#jqxDaySelect").jqxDropDownList({ source: weekDays, width: '175px', height: '23px', checkboxes: true });
-					$("#jqxStateSelect").jqxComboBox({ source: stateList, placeHolder: "State", width: '175px' });
+					$("#jqxYesNoSelect").jqxComboBox({ source: yesNoSource, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
+					$("#jqxYesNoSelect2").jqxComboBox({ source: yesNoSource, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
+					$("#jqxDaySelect").jqxComboBox({ source: weekDays, width: '175px', height: '23px', checkboxes: true, placeHolder: 'Please Choose:' });
+					$("#jqxStateSelect").jqxComboBox({ source: stateList, placeHolder: "State", width: '175px', placeHolder: 'Please Choose:' });
 					$("#jqxPhoneNumber").jqxMaskedInput({ width: '175px', height: '23px', mask: '(###) ###-####' });
 					$("#jqxHireDate").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
-					$("#jqxYesNoSelect3").jqxDropDownList({ source: yesNoSource, width: '175px', height: '23px' });
+					$("#jqxYesNoSelect3").jqxComboBox({ source: yesNoSource, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
 					$("#jqxOutsideComp").jqxTextArea({ width:'175px', height: '23px', placeHolder: 'Outside Company' })
 					$("#jqxDepartSelect1").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
 					$("#jqxDepartSelect2").jqxComboBox({source: plantDeparts2, width: '175px', height: '23px', placeHolder: "Select the Department" });
@@ -281,7 +289,7 @@
 					$("#jqxYesNoSelect3").on('change', function (event) {
 						var args = event.args;
 						$("#jqxOutsideComp").hide();
-						if(args) {
+						if (args) {
 							var item = args.item;
 							var value = item.value;
 							if (value === "No") {
@@ -293,6 +301,43 @@
 					$("#jqxTimeOccurred").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "h:mm tt", showCalendarButton: false, showTimeButton: true });
 					$("#jqxDateReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
 					$("#jqxTimeReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "h:mm tt", showCalendarButton: false, showTimeButton: true });
+					$("#jqxInjurDesc").jqxTextArea({ width: '350px', height: '69px', placeHolder: "Injury/Illness Description" });
+					$("#jqxYesNoSelect4").jqxComboBox({ source: yesNoSource, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxTreatDesc").jqxTextArea({ width: '350px', height: '69px', placeHolder: "Treatment Description" });
+					$("#jqxYesNoSelect5").jqxComboBox({ source: yesNoSource, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxOutFacility").jqxTextArea({ width: '175px', height: '23px', placeHolder: 'Outside Facility Name' });
+					$("#jqxOutFacility").hide();
+					$("#jqxYesNoSelect5").on('change', function(event) {
+						var args = event.args;
+						$("#jqxOutFacility").hide();
+						if (args) {
+							var item = args.item;
+							var value = item.value;
+							if (value === "Yes") {
+								$("#jqxOutFacility").show();
+							}
+						}
+					});
+					$("#jqxInjurCause").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Description Here' });
+					$("#jqxSubseqAction").jqxDropDownList({ width: '175px', height: '23px', source: subSeqActions });
+					$("#jqxHospitalName").jqxTextArea({ width: '350px', height: '23px', placeHolder: 'Hospital Name' });
+					$("#jqxOtherAction").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Describe other actions taken' });
+					$("#jqxHospitalName").hide();
+					$("#jqxOtherAction").hide();
+					$("#jqxSubseqAction").on('change', function(event) {
+						var args = event.args;
+						$("#jqxHospitalName").hide();
+						$("#jqxOtherAction").hide();
+						if (args) {
+							var item = args.item;
+							var value = item.value;
+							if (value === 'Sent to Hospital') {
+								$("#jqxHospitalName").show();
+							} else if (value === 'Other') {
+								$("#jqxOtherAction").show();
+							}
+						}
+					});
 				});
 				
 			</script>
@@ -316,7 +361,6 @@
 					<div id="jqxYesNoSelect2"></div>
 					<p style="color:white;">Please select the injured person's scheduled workdays</p>
 					<div id="jqxDaySelect"></div>
-					<br />
 					<p style="color:white;">Enter the employee's street address</p>
 					<textarea id="jqxStrtAddress"></textarea>
 					<p style="color:white;">Enter the city</p>
@@ -343,6 +387,22 @@
 					<div id="jqxDateReported"></div>
 					<p style="color:white;">What time did the incident get reported?</p>
 					<div id="jqxTimeReported"></div>
+				</div>
+				<!-- Column 3 -->
+				<div class="column">
+					<textarea id="jqxInjurDesc"></textarea>
+					<p style="color:white;">Has this body part been injured before?</p>
+					<div id="jqxYesNoSelect4"></div>
+					<textarea id="jqxTreatDesc" style="margin-top: 20px;"></textarea>
+					<p style="color:white;">Is professional treatment required?</p>
+					<div id="jqxYesNoSelect5" style="float: left;"></div>
+					<textarea id="jqxOutFacility" style="margin-left: 5px; float: left;"></textarea>
+					<p style="color:white; padding-top: 15px; clear:both;">Please describe how the incident occurred</p>
+					<textarea id="jqxInjurCause"></textarea>
+					<p style="color:white;">Subsequent Action Taken</p>
+					<div id="jqxSubseqAction"></div>
+					<textarea id="jqxHospitalName" style="margin-top: 15px;"></textarea>
+					<textarea id="jqxOtherAction" style="margin-top: 15px;"></textarea>
 				</div>
 			</div>
 		</div>
