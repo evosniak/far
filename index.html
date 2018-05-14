@@ -5,7 +5,6 @@
 
 		<link rel="icon"       href="../images/mrp vendor 256.png"/>
 		<link rel="stylesheet" href="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\styles\jqx.base.css"/>
-		<link rel="stylesheet" href="../apps/jqwidgets540/jqwidgets/styles/jqx.ui-darkness-tfi.css"/>
 		<link rel="stylesheet" href="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\styles\jqx.ui-sunny.css"/>
 
 		<style>
@@ -117,6 +116,9 @@
 			<script type="text/javascript">
 				$(document).ready(function () {
 					$("#jqxInjuredName").jqxTextArea({ placeHolder: "Injured Person", height: '23px', width: '175px', minLength: 1 });
+					$("#jqxStrtAddress").jqxTextArea({ placeHolder: "Street Address", height: '23px', width: '175px', minLength: 1 });
+					$("#jqxCity").jqxTextArea({ placeHolder: "City", height: '23px', width: '175px',});
+					$("#jqxZipcode").jqxMaskedInput({ width: '175px', height: '23px', mask: '#####'}); 
 					var genderSource = [
 						"Male",
 						"Female",
@@ -133,14 +135,74 @@
 						"Yes",
 						"No",
 					];
-					var plantDeparts = [
+					var plantDeparts1 = [
 						"Example1",
 						"Example2",
 						"Example3",
 						"Example4",
 						"Example5",
 					];
-					var weekDays = [
+					var plantDeparts2 = [
+						"Example6",
+						"Example7",
+						"Example8",
+						"Example9",
+						"Example10",
+					];
+					var stateList = [
+						"AK",
+						"AL",
+						"AR",
+						"AZ",
+						"CA",
+						"CO",
+						"CT",
+						"DC",
+						"DE",
+						"FL",
+						"GA",
+						"HI",
+						"IA",
+						"ID",
+						"IL",
+						"IN",
+						"KS",
+						"KY",
+						"LA",
+						"MA",
+						"MD",
+						"ME",
+						"MI",
+						"MN",
+						"MO",
+						"MS",
+						"MT",
+						"NC",
+						"ND",
+						"NE",
+						"NH",
+						"NJ",
+						"NM",
+						"NV",
+						"NY",
+						"OH",
+						"OK",
+						"OR",
+						"PA",
+						"RI",
+						"SC",
+						"SD",
+						"TN",
+						"TX",
+						"UT",
+						"VA",
+						"VT",
+						"WA",
+						"WI",
+						"WV",
+						"WY",
+					];
+					var weekDays = new Array(
 						"Sunday",
 						"Monday",
 						"Tuesday",
@@ -148,14 +210,62 @@
 						"Thursday",
 						"Friday",
 						"Saturday",
-					];
+					);
+					var cityAutofill = new Array(
+						"Avon",
+						"Avon Lake",
+						"Lorain",
+						"Elyria",
+						"Cleveland",
+						"Lakewood",
+						"Westlake",
+						"North Ridgeville",
+						"Sheffield",
+						"Oberlin",
+						"Sheffield Lake"
+					)
 					$("#jqxGenderSelect").jqxDropDownList({ source: genderSource, width: '175px', height: '23px', placeHolder: 'Select the Gender' });
 					$("#jqxPlantSelect").jqxComboBox({ source: plantSource, placeHolder: 'Select the Plant', width: '175px', height: '23px' });
-					$("#jqxDepartSelect").jqxComboBox({source: plantDeparts, width: '175px', height: '23px', placeHolder: "Select the Department" });
 					$("#jqxYesNoSelect").jqxDropDownList({ source: yesNoSource, width: '175px', height:' 23px' });
 					$("#jqxYesNoSelect2").jqxDropDownList({ source: yesNoSource, width: '175px', height:' 23px' });
 					$("#jqxDaySelect").jqxDropDownList({ source: weekDays, width: '175px', height: '23px', checkboxes: true });
+					$("#jqxStateSelect").jqxComboBox({ source: stateList, placeHolder: "State", width: '175px' });
+					//$("#jqxDepartSelect").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department", disabled: true });
+					$("#jqxDepartSelect1").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect2").jqxComboBox({source: plantDeparts2, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect3").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect4").jqxComboBox({source: plantDeparts2, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect5").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect1").hide();
+					$("#jqxDepartSelect2").hide();
+					$("#jqxDepartSelect3").hide();
+					$("#jqxDepartSelect4").hide();
+					$("#jqxDepartSelect5").hide();
+					$("#jqxPlantSelect").on('change', function (event) {
+						var args = event.args;
+						$("#jqxDepartSelect1").hide();
+						$("#jqxDepartSelect2").hide();
+						$("#jqxDepartSelect3").hide();
+						$("#jqxDepartSelect4").hide();
+						$("#jqxDepartSelect5").hide();
+						if (args) {
+							var item = args.item;
+							var value = item.value;
+							if (value === "1") {
+								$("#jqxDepartSelect1").show();
+							} else if (value === "2") {
+								$("#jqxDepartSelect2").show();
+							} else if (value === "3") {
+								$("#jqxDepartSelect3").show();
+								} else if (value === "4") {
+								$("#jqxDepartSelect2").show();
+							} else {
+								$("#jqxDepartSelect5").show();
+							}
+						}
+					});
 				});
+				
 			</script>
 			<h1 style="color:white;">HRP-28 First Aid Report</h1>
 			<p style="color:white; font-size: 18px;">This form must be filled out by a First Aid Team Member</p>
@@ -163,7 +273,11 @@
 			
 			<div id="jqxGenderSelect" style="float: left;"></div>
 			<div id="jqxPlantSelect" style="float: left;"></div>
-			<div id="jqxDepartSelect" style="float: left;"></div>
+			<div id="jqxDepartSelect1" style="float: left;"></div>
+			<div id="jqxDepartSelect2" style="float: left;"></div>
+			<div id="jqxDepartSelect3" style="float: left;"></div>
+			<div id="jqxDepartSelect4" style="float: left;"></div>
+			<div id="jqxDepartSelect5" style="float: left;"></div>
 			<br />
 			<p style="color:white;">Is this the injured person's normal shift?</p>
 			<div id="jqxYesNoSelect"></div>
@@ -171,6 +285,16 @@
 			<div id="jqxYesNoSelect2"></div>
 			<p style="color:white;">Please select the injured person's scheduled workdays</p>
 			<div id="jqxDaySelect"></div>
+			<br />
+			<br />
+			<p style="color:white;">Enter the employee's street address</p>
+			<textarea id="jqxStrtAddress"></textarea>
+			<p style="color:white;">Enter the city</p>
+			<textarea id="jqxCity"></textarea>
+			<p style="color:white;">Enter the state</p>
+			<div id="jqxStateSelect"></div>
+			<p style="color:white;">Enter the zip code</p>
+			<div id="jqxZipcode"></div>
 		</div>
 		
 	</body>
