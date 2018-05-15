@@ -3,7 +3,6 @@
 	<head>
 		<title>HRP-28 First Aid Report</title>
 
-		<link rel="icon"       href="../images/mrp vendor 256.png"/>
 		<link rel="stylesheet" href="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\styles\jqx.base.css"/>
 		<link rel="stylesheet" href="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\styles\jqx.ui-sunny.css"/>
 
@@ -126,6 +125,7 @@
 			<script type="text/javascript">
 				$(document).ready(function () {
 					$("#jqxInjuredName").jqxTextArea({ placeHolder: "Injured Person", height: '23px', width: '175px', minLength: 1 });
+					$("#jqxInjuredName").jqxTextArea('focus');
 					$("#jqxStrtAddress").jqxTextArea({ placeHolder: "Street Address", height: '23px', width: '200px', minLength: 1 });
 					$("#jqxCity").jqxTextArea({ placeHolder: "City", height: '23px', width: '175px',});
 					$("#jqxZipcode").jqxMaskedInput({ width: '175px', height: '23px', mask: '#####'}); 
@@ -441,7 +441,6 @@
 						}
 					});
 				});
-				
 			</script>
 			<h1 style="color:white;">HRP-28 First Aid Report</h1>
 			<p style="color:white; font-size: 18px;">This form must be filled out by a First Aid Team Member</p>
