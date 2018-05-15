@@ -388,6 +388,58 @@
 							$("#jqxButtonSubmit").jqxButton({disabled: false });
 						} 
 					});
+					/*
+					Array Order : 	[jqxInjuredName, jqxGenderSelect, jqxPlantSelect, jqxDepartSelect, jqxYesNoSelect, jqxYesNoSelect2, jqxDaySelect,
+									 jqxStrtAddress, jqxCity, jqxStateSelect, jqxZipcode, jqxPhoneNumber, jqxYesNoSelect3, jqxDateOccurred, jqxTimeOccurred,
+									 jqxDateReported, jqxTimeReported, jqxInjurDesc, jqxYesNoSelect4, jqxTreatDesc, jqxYesNoSelect5, jqxInjurCause, jqxSubseqAction,
+									 jqxHospitalName, jqxOtherAction
+									]
+					*/
+					var submitArray = new Array();
+					$("#jqxButtonSubmit").on('click', function() {
+						submitArray.push($("#jqxInjuredName").val());
+						submitArray.push($("#jqxGenderSelect").val());
+						submitArray.push($("#jqxPlantSelect").val());
+						if ($("#jqxPlantSelect").val() === "1") {
+							submitArray.push($("#jqxDepartSelect1").val());
+						} else if ($("#jqxPlantSelect").val() === "2") {
+							submitArray.push($("#jqxDepartSelect2").val());
+						} else if ($("#jqxPlantSelect").val() === "3") {
+							submitArray.push($("#jqxDepartSelect3").val());
+						} else if ($("#jqxPlantSelect").val() === "4") {
+							submitArray.push($("#jqxDepartSelect4").val());
+						} else {
+							submitArray.push($("#jqxDepartSelect5").val());
+						}
+						submitArray.push($("#jqxYesNoSelect").val());
+						submitArray.push($("#jqxYesNoSelect2").val());
+						submitArray.push($("#jqxDaySelect").val());
+						submitArray.push($("#jqxStrtAddress").val());
+						submitArray.push($("#jqxCity").val());
+						submitArray.push($("#jqxStateSelect").val());
+						submitArray.push($("#jqxZipcode").val());
+						submitArray.push($("#jqxPhoneNumber").val());
+						submitArray.push($("#jqxYesNoSelect3").val());
+						submitArray.push($("#jqxDateOccurred").val());
+						submitArray.push($("#jqxTimeOccurred").val());
+						submitArray.push($("#jqxDateReported").val());
+						submitArray.push($("#jqxTimeReported").val());
+						submitArray.push($("#jqxInjurDesc").val());
+						submitArray.push($("#jqxYesNoSelect4").val());
+						submitArray.push($("#jqxTreatDesc").val());
+						submitArray.push($("#jqxYesNoSelect5").val());
+						submitArray.push($("#jqxInjurCause").val());
+						submitArray.push($("#jqxSubseqAction").val());
+						if ($("#jqxSubseqAction").val() === "Sent to Hospital") {
+							submitArray.push($("#jqxHospitalName").val());
+						} else if ($("#jqxSubseqAction").val() === "Other") {
+							submitArray.push($("#jqxOtherAction").val());
+						}
+						var i = 0;
+						for (i = 0; i < submitArray.length; i++) {
+							console.log(submitArray[i]);
+						}
+					});
 				});
 				
 			</script>
