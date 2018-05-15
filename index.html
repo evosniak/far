@@ -318,8 +318,9 @@
 							}
 						}
 					});
+					$("#jqxButtonSubmit").jqxButton({ width: '75px', height: '23px' });
 					$("#jqxInjurCause").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Description Here' });
-					$("#jqxSubseqAction").jqxDropDownList({ width: '175px', height: '23px', source: subSeqActions });
+					$("#jqxSubseqAction").jqxComboBox({ width: '175px', height: '23px', source: subSeqActions, placeHolder: 'Please Choose:' });
 					$("#jqxHospitalName").jqxTextArea({ width: '350px', height: '23px', placeHolder: 'Hospital Name' });
 					$("#jqxOtherAction").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Describe other actions taken' });
 					$("#jqxHospitalName").hide();
@@ -338,6 +339,11 @@
 							}
 						}
 					});
+					if ($("#jqxInjuredName").val() === "" || $("#jqxStrtAddress").val() === "" ||
+								  $("#jqxYesNoSelect3").val() === "" || $("#jqxInjurDesc").val() === "" || 
+								  $("#jqxTreatDesc").val() === "" || $("#jqxInjurCause").val() === "" || $("#jqxSubseqAction").val() === "") {
+						$("#jqxButtonSubmit").jqxButton({disabled: true });
+					}
 				});
 				
 			</script>
@@ -403,6 +409,7 @@
 					<div id="jqxSubseqAction"></div>
 					<textarea id="jqxHospitalName" style="margin-top: 15px;"></textarea>
 					<textarea id="jqxOtherAction" style="margin-top: 15px;"></textarea>
+					<input id="jqxButtonSubmit" style="margin-top: 25%;" type="submit" value="Submit" />
 				</div>
 			</div>
 		</div>
