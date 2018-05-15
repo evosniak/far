@@ -318,7 +318,7 @@
 							}
 						}
 					});
-					$("#jqxButtonSubmit").jqxButton({ width: '75px', height: '23px' });
+					$("#jqxButtonSubmit").jqxButton({ width: '75px', height: '23px', disabled: true });
 					$("#jqxInjurCause").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Description Here' });
 					$("#jqxSubseqAction").jqxComboBox({ width: '175px', height: '23px', source: subSeqActions, placeHolder: 'Please Choose:' });
 					$("#jqxHospitalName").jqxTextArea({ width: '350px', height: '23px', placeHolder: 'Hospital Name' });
@@ -339,11 +339,55 @@
 							}
 						}
 					});
-					if ($("#jqxInjuredName").val() === "" || $("#jqxStrtAddress").val() === "" ||
-								  $("#jqxYesNoSelect3").val() === "" || $("#jqxInjurDesc").val() === "" || 
-								  $("#jqxTreatDesc").val() === "" || $("#jqxInjurCause").val() === "" || $("#jqxSubseqAction").val() === "") {
-						$("#jqxButtonSubmit").jqxButton({disabled: true });
-					}
+					$("#jqxInjuredName").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxStrtAddress").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxYesNoSelect3").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxInjurDesc").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxTreatDesc").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxInjurCause").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxSubseqAction").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
 				});
 				
 			</script>
