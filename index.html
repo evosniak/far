@@ -124,10 +124,35 @@
 		<div id="content">
 			<script type="text/javascript">
 				$(document).ready(function () {
+					var cityAutofill = new Array(
+						"Avon",
+						"Avon Lake",
+						"Lorain",
+						"Elyria",
+						"Cleveland",
+						"Lakewood",
+						"Westlake",
+						"North Ridgeville",
+						"Sheffield",
+						"Oberlin",
+						"Sheffield Lake",
+						"Amherst",
+						"Parma",
+						"Mentor",
+						"Berea",
+						"Middleburg Heights",
+						"North Olmsted",
+						"Olmsted Falls",
+						"Brook Park",
+						"Fairview",
+						"Bay Village",
+						"Broadview Heights",
+						"Fairview Park"
+					)
 					$("#jqxInjuredName").jqxTextArea({ placeHolder: "Injured Person", height: '23px', width: '175px', minLength: 1 });
 					$("#jqxInjuredName").jqxTextArea('focus');
 					$("#jqxStrtAddress").jqxTextArea({ placeHolder: "Street Address", height: '23px', width: '200px', minLength: 1 });
-					$("#jqxCity").jqxTextArea({ placeHolder: "City", height: '23px', width: '175px',});
+					$("#jqxCity").jqxTextArea({ placeHolder: "City", height: '23px', width: '175px', source: cityAutofill});
 					$("#jqxZipcode").jqxMaskedInput({ width: '175px', height: '23px', mask: '#####'}); 
 					var genderSource = [
 						"Male",
@@ -221,19 +246,7 @@
 						"Friday",
 						"Saturday",
 					);
-					var cityAutofill = new Array(
-						"Avon",
-						"Avon Lake",
-						"Lorain",
-						"Elyria",
-						"Cleveland",
-						"Lakewood",
-						"Westlake",
-						"North Ridgeville",
-						"Sheffield",
-						"Oberlin",
-						"Sheffield Lake"
-					)
+					
 					var subSeqActions = [
 						"Referred to Physician",
 						"Sent to Hospital",
