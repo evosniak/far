@@ -255,21 +255,21 @@
 						"Refused Treatment",
 						"Other",
 					];
-					$("#jqxGenderSelect").jqxComboBox({ source: genderSource, width: '175px', height: '23px', placeHolder: 'Select the Gender' });
-					$("#jqxPlantSelect").jqxComboBox({ source: plantSource, placeHolder: 'Select the Plant', width: '175px', height: '23px' });
-					$("#jqxYesNoSelect").jqxComboBox({ source: yesNoSource, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
-					$("#jqxYesNoSelect2").jqxComboBox({ source: yesNoSource, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
-					$("#jqxDaySelect").jqxComboBox({ source: weekDays, width: '175px', height: '23px', checkboxes: true, placeHolder: 'Please Choose:' });
-					$("#jqxStateSelect").jqxComboBox({ source: stateList, placeHolder: "State", width: '175px', placeHolder: 'Please Choose:' });
+					$("#jqxGenderSelect").jqxComboBox({ source: genderSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Select the Gender' });
+					$("#jqxPlantSelect").jqxComboBox({ source: plantSource, autoDropDownHeight: true, placeHolder: 'Select the Plant', width: '175px', height: '23px' });
+					$("#jqxYesNoSelect").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
+					$("#jqxYesNoSelect2").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
+					$("#jqxDaySelect").jqxComboBox({ source: weekDays, autoDropDownHeight: true, width: '175px', height: '23px', checkboxes: true, placeHolder: 'Please Choose:' });
+					$("#jqxStateSelect").jqxComboBox({ source: stateList, autoDropDownHeight: true, placeHolder: "State", width: '175px', placeHolder: 'Please Choose:' });
 					$("#jqxPhoneNumber").jqxMaskedInput({ width: '175px', height: '23px', mask: '(###) ###-####' });
 					$("#jqxHireDate").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
-					$("#jqxYesNoSelect3").jqxComboBox({ source: yesNoSource, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxYesNoSelect3").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
 					$("#jqxOutsideComp").jqxTextArea({ width:'175px', height: '23px', placeHolder: 'Outside Company' })
-					$("#jqxDepartSelect1").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
-					$("#jqxDepartSelect2").jqxComboBox({source: plantDeparts2, width: '175px', height: '23px', placeHolder: "Select the Department" });
-					$("#jqxDepartSelect3").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
-					$("#jqxDepartSelect4").jqxComboBox({source: plantDeparts2, width: '175px', height: '23px', placeHolder: "Select the Department" });
-					$("#jqxDepartSelect5").jqxComboBox({source: plantDeparts1, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect1").jqxComboBox({source: plantDeparts1, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect2").jqxComboBox({source: plantDeparts2, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect3").jqxComboBox({source: plantDeparts1, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect4").jqxComboBox({source: plantDeparts2, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect5").jqxComboBox({source: plantDeparts1, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
 					$("#jqxDepartSelect1").hide();
 					$("#jqxDepartSelect2").hide();
 					$("#jqxDepartSelect3").hide();
@@ -315,9 +315,9 @@
 					$("#jqxDateReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
 					$("#jqxTimeReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "h:mm tt", showCalendarButton: false, showTimeButton: true });
 					$("#jqxInjurDesc").jqxTextArea({ width: '350px', height: '69px', placeHolder: "Injury/Illness Description" });
-					$("#jqxYesNoSelect4").jqxComboBox({ source: yesNoSource, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxYesNoSelect4").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
 					$("#jqxTreatDesc").jqxTextArea({ width: '350px', height: '69px', placeHolder: "Treatment Description" });
-					$("#jqxYesNoSelect5").jqxComboBox({ source: yesNoSource, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxYesNoSelect5").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
 					$("#jqxOutFacility").jqxTextArea({ width: '175px', height: '23px', placeHolder: 'Outside Facility Name' });
 					$("#jqxOutFacility").hide();
 					$("#jqxYesNoSelect5").on('change', function(event) {
@@ -333,7 +333,7 @@
 					});
 					$("#jqxButtonSubmit").jqxButton({ width: '75px', height: '23px', disabled: false }); //Fix later, set to false for testing
 					$("#jqxInjurCause").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Description Here' });
-					$("#jqxSubseqAction").jqxComboBox({ width: '175px', height: '23px', source: subSeqActions, placeHolder: 'Please Choose:' });
+					$("#jqxSubseqAction").jqxComboBox({ width: '175px', autoDropDownHeight: true, height: '23px', source: subSeqActions, placeHolder: 'Please Choose:' });
 					$("#jqxHospitalName").jqxTextArea({ width: '350px', height: '23px', placeHolder: 'Hospital Name' });
 					$("#jqxOtherAction").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Describe other actions taken' });
 					$("#jqxHospitalName").hide();
@@ -449,6 +449,7 @@
 							submitArray.push($("#jqxOtherAction").val());
 						}
 						jsonArray = JSON.stringify(submitArray);
+						console.log(jsonArray);
 						xmlhttp = new XMLHttpRequest();
 						xmlhttp.onreadystatechange = function() {
 							if (this.readyState == 4 && this.status == 200) {
