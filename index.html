@@ -331,7 +331,7 @@
 							}
 						}
 					});
-					$("#jqxButtonSubmit").jqxButton({ width: '75px', height: '23px', disabled: true });
+					$("#jqxButtonSubmit").jqxButton({ width: '75px', height: '23px', disabled: false }); //Fix later, set to false for testing
 					$("#jqxInjurCause").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Description Here' });
 					$("#jqxSubseqAction").jqxComboBox({ width: '175px', height: '23px', source: subSeqActions, placeHolder: 'Please Choose:' });
 					$("#jqxHospitalName").jqxTextArea({ width: '350px', height: '23px', placeHolder: 'Hospital Name' });
@@ -448,10 +448,23 @@
 						} else if ($("#jqxSubseqAction").val() === "Other") {
 							submitArray.push($("#jqxOtherAction").val());
 						}
-						var i = 0;
-						for (i = 0; i < submitArray.length; i++) {
-							console.log(submitArray[i]);
-						}
+						jsonArray = JSON.stringify(submitArray);
+						$.ajax({ 
+							dataType: 'json',
+							url: 'safetyForm.php',
+							data: jsonArray,
+							success: function( answer, status, xhr ){
+									if( answer !== null ){
+										for( i = 0; i < answer.length; i++){
+											console.log( "file[" + i + "]:", answer[i] );
+										}
+									}
+								},
+								error: function ( xhr, status, error ){
+									console.log( "status: ", status, "\nerror: ", error, "\nxhr: "); console.dir( xhr );
+								}
+							});
+								
 					});
 				});
 			</script>
