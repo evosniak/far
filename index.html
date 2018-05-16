@@ -3,15 +3,14 @@
 	<head>
 		<title>HRP-28 First Aid Report</title>
 
-		<link rel="icon"       href="../images/mrp vendor 256.png"/>
-		<link rel="stylesheet" href="../apps/jqwidgets540/jqwidgets/styles/jqx.base.css"/>
-		<link rel="stylesheet" href="../apps/jqwidgets540/jqwidgets/styles/jqx.ui-darkness-tfi.css"/>
-		<link rel="stylesheet" href="../apps/jqwidgets540/jqwidgets/styles/jqx.ui-sunny.css"/>
+		<link rel="stylesheet" href="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\styles\jqx.base.css"/>
+		<link rel="stylesheet" href="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\styles\jqx.ui-sunny.css"/>
 
 		<style>
 			body{
 				background-color: black;
 				margin: 0px;
+				padding-left: 20px;
 			}
 			table{
 				border-collapse: collapse;
@@ -51,68 +50,484 @@
 				font-weight: bold;
 				color: yellow;
 			}
+			.column {
+				float: left;
+				width: 33%;
+			}
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
 		</style>
-		<script src="../jquery-2.1.3.min.js"></script>
-		<script src="../apps/moment/moment.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxcore.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxbuttongroup.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxbuttons.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxcalendar.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxchart.core.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxcheckbox.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxcolorpicker.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxcombobox.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdata.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdata.export.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdatatable.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdatetimeinput.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdragdrop.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdraw.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdropdownbutton.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxdropdownlist.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxeditor.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxexpander.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgauge.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.aggregates.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.columnsreorder.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.columnsresize.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.edit.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.export.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.filter.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.grouping.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.pager.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.selection.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxgrid.sort.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxinput.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxknob.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxlistbox.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxloader.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxmaskedinput.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxmenu.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxnavigationbar.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxnotification.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxnumberinput.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxpanel.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxpasswordinput.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxradiobutton.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxrangeselector.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxresponse.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxribbon.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxscrollbar.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxslider.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxsplitter.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxswitchbutton.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxtabs.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxtextarea.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxtoolbar.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxtooltip.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxtree.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxtreegrid.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxwindow.js"></script>
-		<script src="../apps/jqwidgets540/jqwidgets/jqxlistbox.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\scripts\jquery-1.12.4.min.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxcore.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxbuttongroup.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxbuttons.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxcalendar.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxchart.core.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxcheckbox.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxcolorpicker.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxcombobox.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdata.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdata.export.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdatatable.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdatetimeinput.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdragdrop.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdraw.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdropdownbutton.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxdropdownlist.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxeditor.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxexpander.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgauge.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.aggregates.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.columnsreorder.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.columnsresize.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.edit.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.export.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.filter.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.grouping.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.pager.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.selection.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxgrid.sort.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxinput.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxknob.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxlistbox.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxloader.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxmaskedinput.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxmenu.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxnavigationbar.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxnotification.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxnumberinput.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxpanel.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxpasswordinput.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxradiobutton.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxrangeselector.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxresponse.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxribbon.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxscrollbar.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxslider.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxsplitter.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxswitchbutton.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxtabs.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxtextarea.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxtoolbar.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxtooltip.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxtree.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxtreegrid.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxwindow.js"></script>
+		<script src="C:\Users\evosniak\Downloads\jqwidgets-ver5.7.2\JQWidgets\jqwidgets\jqxlistbox.js"></script>
+		
 	</head>
 	<body>
+		<div id="content">
+			<script type="text/javascript">
+				$(document).ready(function () {
+					var cityAutofill = new Array(
+						"Avon",
+						"Avon Lake",
+						"Lorain",
+						"Elyria",
+						"Cleveland",
+						"Lakewood",
+						"Westlake",
+						"North Ridgeville",
+						"Sheffield",
+						"Oberlin",
+						"Sheffield Lake",
+						"Amherst",
+						"Parma",
+						"Mentor",
+						"Berea",
+						"Middleburg Heights",
+						"North Olmsted",
+						"Olmsted Falls",
+						"Brook Park",
+						"Fairview",
+						"Bay Village",
+						"Broadview Heights",
+						"Fairview Park"
+					)
+					$("#jqxInjuredName").jqxTextArea({ placeHolder: "Injured Person", height: '23px', width: '175px', minLength: 1 });
+					$("#jqxInjuredName").jqxTextArea('focus');
+					$("#jqxStrtAddress").jqxTextArea({ placeHolder: "Street Address", height: '23px', width: '200px', minLength: 1 });
+					$("#jqxCity").jqxTextArea({ placeHolder: "City", height: '23px', width: '175px', source: cityAutofill});
+					$("#jqxZipcode").jqxMaskedInput({ width: '175px', height: '23px', mask: '#####'}); 
+					var genderSource = [
+						"Male",
+						"Female",
+						"Other",
+					];
+					var plantSource = [
+						"1",
+						"2",
+						"3",
+						"4",
+						"5",
+					];
+					var yesNoSource = [
+						"Yes",
+						"No",
+					];
+					var plantDeparts1 = [
+						"Example1",
+						"Example2",
+						"Example3",
+						"Example4",
+						"Example5",
+					];
+					var plantDeparts2 = [
+						"Example6",
+						"Example7",
+						"Example8",
+						"Example9",
+						"Example10",
+					];
+					var stateList = [
+						"AK",
+						"AL",
+						"AR",
+						"AZ",
+						"CA",
+						"CO",
+						"CT",
+						"DC",
+						"DE",
+						"FL",
+						"GA",
+						"HI",
+						"IA",
+						"ID",
+						"IL",
+						"IN",
+						"KS",
+						"KY",
+						"LA",
+						"MA",
+						"MD",
+						"ME",
+						"MI",
+						"MN",
+						"MO",
+						"MS",
+						"MT",
+						"NC",
+						"ND",
+						"NE",
+						"NH",
+						"NJ",
+						"NM",
+						"NV",
+						"NY",
+						"OH",
+						"OK",
+						"OR",
+						"PA",
+						"RI",
+						"SC",
+						"SD",
+						"TN",
+						"TX",
+						"UT",
+						"VA",
+						"VT",
+						"WA",
+						"WI",
+						"WV",
+						"WY",
+					];
+					var weekDays = new Array(
+						"Sunday",
+						"Monday",
+						"Tuesday",
+						"Wednesday",
+						"Thursday",
+						"Friday",
+						"Saturday",
+					);
+					
+					var subSeqActions = [
+						"Referred to Physician",
+						"Sent to Hospital",
+						"Sent Home",
+						"Returned to Work",
+						"Refused Treatment",
+						"Other",
+					];
+					$("#jqxGenderSelect").jqxComboBox({ source: genderSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Select the Gender' });
+					$("#jqxPlantSelect").jqxComboBox({ source: plantSource, autoDropDownHeight: true, placeHolder: 'Select the Plant', width: '175px', height: '23px' });
+					$("#jqxYesNoSelect").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
+					$("#jqxYesNoSelect2").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height:' 23px', placeHolder: 'Please Choose:' });
+					$("#jqxDaySelect").jqxComboBox({ source: weekDays, autoDropDownHeight: true, width: '175px', height: '23px', checkboxes: true, placeHolder: 'Please Choose:' });
+					$("#jqxStateSelect").jqxComboBox({ source: stateList, autoDropDownHeight: true, placeHolder: "State", width: '175px', placeHolder: 'Please Choose:' });
+					$("#jqxPhoneNumber").jqxMaskedInput({ width: '175px', height: '23px', mask: '(###) ###-####' });
+					$("#jqxHireDate").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
+					$("#jqxYesNoSelect3").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxOutsideComp").jqxTextArea({ width:'175px', height: '23px', placeHolder: 'Outside Company' })
+					$("#jqxDepartSelect1").jqxComboBox({source: plantDeparts1, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect2").jqxComboBox({source: plantDeparts2, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect3").jqxComboBox({source: plantDeparts1, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect4").jqxComboBox({source: plantDeparts2, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect5").jqxComboBox({source: plantDeparts1, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: "Select the Department" });
+					$("#jqxDepartSelect1").hide();
+					$("#jqxDepartSelect2").hide();
+					$("#jqxDepartSelect3").hide();
+					$("#jqxDepartSelect4").hide();
+					$("#jqxDepartSelect5").hide();
+					$("#jqxPlantSelect").on('change', function (event) {
+						var args = event.args;
+						$("#jqxDepartSelect1").hide();
+						$("#jqxDepartSelect2").hide();
+						$("#jqxDepartSelect3").hide();
+						$("#jqxDepartSelect4").hide();
+						$("#jqxDepartSelect5").hide();
+						if (args) {
+							var item = args.item;
+							var value = item.value;
+							if (value === "1") {
+								$("#jqxDepartSelect1").show();
+							} else if (value === "2") {
+								$("#jqxDepartSelect2").show();
+							} else if (value === "3") {
+								$("#jqxDepartSelect3").show();
+							} else if (value === "4") {
+								$("#jqxDepartSelect2").show();
+							} else {
+								$("#jqxDepartSelect5").show();
+							}
+						}
+					});
+					$("#jqxOutsideComp").hide();
+					$("#jqxYesNoSelect3").on('change', function (event) {
+						var args = event.args;
+						$("#jqxOutsideComp").hide();
+						if (args) {
+							var item = args.item;
+							var value = "C:/Users/evosniak/mrp/mrpForecast.html";
+							if (value === "No") {
+								$("#jqxOutsideComp").show();
+							}
+						}
+					});
+					$("#jqxDateOccurred").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
+					$("#jqxTimeOccurred").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "h:mm tt", showCalendarButton: false, showTimeButton: true });
+					$("#jqxDateReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "M/dd/yyyy" });
+					$("#jqxTimeReported").jqxDateTimeInput({ width: '175px', height: '23px', formatString: "h:mm tt", showCalendarButton: false, showTimeButton: true });
+					$("#jqxInjurDesc").jqxTextArea({ width: '350px', height: '69px', placeHolder: "Injury/Illness Description" });
+					$("#jqxYesNoSelect4").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxTreatDesc").jqxTextArea({ width: '350px', height: '69px', placeHolder: "Treatment Description" });
+					$("#jqxYesNoSelect5").jqxComboBox({ source: yesNoSource, autoDropDownHeight: true, width: '175px', height: '23px', placeHolder: 'Please Choose:' });
+					$("#jqxOutFacility").jqxTextArea({ width: '175px', height: '23px', placeHolder: 'Outside Facility Name' });
+					$("#jqxOutFacility").hide();
+					$("#jqxYesNoSelect5").on('change', function(event) {
+						var args = event.args;
+						$("#jqxOutFacility").hide();
+						if (args) {
+							var item = args.item;
+							var value = item.value;
+							if (value === "Yes") {
+								$("#jqxOutFacility").show();
+							}
+						}
+					});
+					$("#jqxButtonSubmit").jqxButton({ width: '75px', height: '23px', disabled: false }); //Fix later, set to false for testing
+					$("#jqxInjurCause").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Description Here' });
+					$("#jqxSubseqAction").jqxComboBox({ width: '175px', autoDropDownHeight: true, height: '23px', source: subSeqActions, placeHolder: 'Please Choose:' });
+					$("#jqxHospitalName").jqxTextArea({ width: '350px', height: '23px', placeHolder: 'Hospital Name' });
+					$("#jqxOtherAction").jqxTextArea({ width: '350px', height: '69px', placeHolder: 'Describe other actions taken' });
+					$("#jqxHospitalName").hide();
+					$("#jqxOtherAction").hide();
+					$("#jqxSubseqAction").on('change', function(event) {
+						var args = event.args;
+						$("#jqxHospitalName").hide();
+						$("#jqxOtherAction").hide();
+						if (args) {
+							var item = args.item;
+							var value = item.value;
+							if (value === 'Sent to Hospital') {
+								$("#jqxHospitalName").show();
+							} else if (value === 'Other') {
+								$("#jqxOtherAction").show();
+							}
+						}
+					});
+					$("#jqxInjuredName").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxStrtAddress").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxYesNoSelect3").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxInjurDesc").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxTreatDesc").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxInjurCause").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					$("#jqxSubseqAction").on('change', function(event) {
+						if ($("#jqxInjuredName").val() != "" && $("#jqxStrtAddress").val() != "" &&
+									  $("#jqxYesNoSelect3").val() != "" && $("#jqxInjurDesc").val() != "" && 
+									  $("#jqxTreatDesc").val() != "" && $("#jqxInjurCause").val() != "" && $("#jqxSubseqAction").val() != "") {
+							$("#jqxButtonSubmit").jqxButton({disabled: false });
+						} 
+					});
+					/*
+					Array Order : 	[jqxInjuredName, jqxGenderSelect, jqxPlantSelect, jqxDepartSelect, jqxYesNoSelect, jqxYesNoSelect2, jqxDaySelect,
+									 jqxStrtAddress, jqxCity, jqxStateSelect, jqxZipcode, jqxPhoneNumber, jqxYesNoSelect3, jqxDateOccurred, jqxTimeOccurred,
+									 jqxDateReported, jqxTimeReported, jqxInjurDesc, jqxYesNoSelect4, jqxTreatDesc, jqxYesNoSelect5, jqxInjurCause, jqxSubseqAction,
+									 jqxHospitalName, jqxOtherAction
+									]
+					*/
+					var submitArray = new Array();
+					$("#jqxButtonSubmit").on('click', function() {
+						submitArray.push($("#jqxInjuredName").val());
+						submitArray.push($("#jqxGenderSelect").val());
+						submitArray.push($("#jqxPlantSelect").val());
+						if ($("#jqxPlantSelect").val() === "1") {
+							submitArray.push($("#jqxDepartSelect1").val());
+						} else if ($("#jqxPlantSelect").val() === "2") {
+							submitArray.push($("#jqxDepartSelect2").val());
+						} else if ($("#jqxPlantSelect").val() === "3") {
+							submitArray.push($("#jqxDepartSelect3").val());
+						} else if ($("#jqxPlantSelect").val() === "4") {
+							submitArray.push($("#jqxDepartSelect4").val());
+						} else {
+							submitArray.push($("#jqxDepartSelect5").val());
+						}
+						submitArray.push($("#jqxYesNoSelect").val());
+						submitArray.push($("#jqxYesNoSelect2").val());
+						submitArray.push($("#jqxDaySelect").val());
+						submitArray.push($("#jqxStrtAddress").val());
+						submitArray.push($("#jqxCity").val());
+						submitArray.push($("#jqxStateSelect").val());
+						submitArray.push($("#jqxZipcode").val());
+						submitArray.push($("#jqxPhoneNumber").val());
+						submitArray.push($("#jqxYesNoSelect3").val());
+						submitArray.push($("#jqxDateOccurred").val());
+						submitArray.push($("#jqxTimeOccurred").val());
+						submitArray.push($("#jqxDateReported").val());
+						submitArray.push($("#jqxTimeReported").val());
+						submitArray.push($("#jqxInjurDesc").val());
+						submitArray.push($("#jqxYesNoSelect4").val());
+						submitArray.push($("#jqxTreatDesc").val());
+						submitArray.push($("#jqxYesNoSelect5").val());
+						submitArray.push($("#jqxInjurCause").val());
+						submitArray.push($("#jqxSubseqAction").val());
+						if ($("#jqxSubseqAction").val() === "Sent to Hospital") {
+							submitArray.push($("#jqxHospitalName").val());
+						} else if ($("#jqxSubseqAction").val() === "Other") {
+							submitArray.push($("#jqxOtherAction").val());
+						}
+						jsonArray = JSON.stringify(submitArray);
+						console.log(jsonArray);
+						xmlhttp = new XMLHttpRequest();
+						xmlhttp.onreadystatechange = function() {
+							if (this.readyState == 4 && this.status == 200) {
+								location.reload() //This might not stay, for testing purposes atm
+							}
+						}
+						xmlhttp.open( "POST", "safetyForm.php", true);
+						xmlhttp.setRequestHeader("Content-type", "application/json");
+						xmlhttp.send("form=" + jsonArray)
+					});
+				});
+			</script>
+			<h1 style="color:white;">HRP-28 First Aid Report</h1>
+			<p style="color:white; font-size: 18px;">This form must be filled out by a First Aid Team Member</p>
+			<div class ="row">
+				<!-- Column 1 -->
+				<div class="column">
+					<textarea id="jqxInjuredName"></textarea>
+					<div id="jqxGenderSelect" style="float: left;"></div>
+					<div id="jqxPlantSelect" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect1" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect2" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect3" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect4" style="float: left; margin-left: 5px;"></div>
+					<div id="jqxDepartSelect5" style="float: left; margin-left: 10px;"></div>
+					<br />
+					<p style="color:white;">Is this the injured person's normal shift?</p>
+					<div id="jqxYesNoSelect"></div>
+					<p style="color:white;">Is this the injured person's normal department?</p>
+					<div id="jqxYesNoSelect2"></div>
+					<p style="color:white;">Please select the injured person's scheduled workdays</p>
+					<div id="jqxDaySelect"></div>
+					<p style="color:white;">Enter the employee's street address</p>
+					<textarea id="jqxStrtAddress"></textarea>
+					<p style="color:white;">Enter the city</p>
+					<textarea id="jqxCity"></textarea>
+					<p style="color:white;">Enter the state</p>
+					<div id="jqxStateSelect"></div>
+					<p style="color:white;">Enter the zip code</p>
+					<div id="jqxZipcode"></div>
+					<p style="color:white;">Enter the employee's phone number</p>
+					<div id="jqxPhoneNumber"></div>
+					<p style="color:white;">Enter the employee's start date</p> <!-- Can this be pulled from LDAP? -->
+					<div id="jqxHireDate"></div>								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+					<p style="color:white;">Is this person a Technifab employee?</p>
+					<div id="jqxYesNoSelect3" style="float: left;"></div>
+					<textarea id="jqxOutsideComp" style="float: left; margin-left: 5px;"></textarea>
+				</div>
+				<!-- Column 2 -->
+				<div class="column">
+					<p style="color:white;">What date did the incident occur?</p>
+					<div id="jqxDateOccurred"></div>
+					<p style="color:white;">What time did the incident occur?</p>
+					<div id="jqxTimeOccurred"></div>
+					<p style="color:white;">What date did the incident get reported?</p>
+					<div id="jqxDateReported"></div>
+					<p style="color:white;">What time did the incident get reported?</p>
+					<div id="jqxTimeReported"></div>
+				</div>
+				<!-- Column 3 -->
+				<div class="column">
+					<textarea id="jqxInjurDesc"></textarea>
+					<p style="color:white;">Has this body part been injured before?</p>
+					<div id="jqxYesNoSelect4"></div>
+					<textarea id="jqxTreatDesc" style="margin-top: 20px;"></textarea>
+					<p style="color:white;">Is professional treatment required?</p>
+					<div id="jqxYesNoSelect5" style="float: left;"></div>
+					<textarea id="jqxOutFacility" style="margin-left: 5px; float: left;"></textarea>
+					<p style="color:white; padding-top: 15px; clear:both;">Please describe how the incident occurred</p>
+					<textarea id="jqxInjurCause"></textarea>
+					<p style="color:white;">Subsequent Action Taken</p>
+					<div id="jqxSubseqAction"></div>
+					<textarea id="jqxHospitalName" style="margin-top: 15px;"></textarea>
+					<textarea id="jqxOtherAction" style="margin-top: 15px;"></textarea>
+					<input id="jqxButtonSubmit" style="margin-top: 25%;" type="submit" value="Submit" />
+				</div>
+			</div>
+		</div>
 		
 	</body>
 </html>
