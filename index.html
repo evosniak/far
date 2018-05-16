@@ -304,7 +304,7 @@
 						$("#jqxOutsideComp").hide();
 						if (args) {
 							var item = args.item;
-							var value = item.value;
+							var value = "C:/Users/evosniak/mrp/mrpForecast.html"item.value;
 							if (value === "No") {
 								$("#jqxOutsideComp").show();
 							}
@@ -449,22 +449,15 @@
 							submitArray.push($("#jqxOtherAction").val());
 						}
 						jsonArray = JSON.stringify(submitArray);
-						$.ajax({ 
-							dataType: 'json',
-							url: 'safetyForm.php',
-							data: jsonArray,
-							success: function( answer, status, xhr ){
-									if( answer !== null ){
-										for( i = 0; i < answer.length; i++){
-											console.log( "file[" + i + "]:", answer[i] );
-										}
-									}
-								},
-								error: function ( xhr, status, error ){
-									console.log( "status: ", status, "\nerror: ", error, "\nxhr: "); console.dir( xhr );
-								}
-							});
-								
+						xmlhttp = new XMLHttpRequest();
+						xmlhttp.onreadystatechange = function() {
+							if (this.readyState == 4 && this.status == 200) {
+								location.reload(true); //For testing purposes, might not stay
+							}
+						}
+						xmlhttp.open( "POST", "safetyForm.php", true);
+						xmlhttp.setReqestHeader("Content-type", "application/json");
+						xmlhttp.send("form=" + jsonArray)
 					});
 				});
 			</script>
